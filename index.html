@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Livros e Manuais Ventura</title>
+  <style>
+    :root{
+      --azul:#0b66d1;
+      --preto:#111;
+      --branco:#ffffff;
+      --cinza:#f4f7fb;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      background: linear-gradient(180deg,var(--cinza),var(--branco));
+      color:var(--preto);
+    }
+    .container{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:36px;
+      box-sizing:border-box;
+    }
+    .card{
+      background:var(--branco);
+      border:4px solid var(--azul);
+      border-radius:12px;
+      padding:28px;
+      width:360px;
+      max-width:94%;
+      box-shadow:0 8px 24px rgba(11,102,209,0.12);
+      text-align:center;
+    }
+    h1{
+      margin:0 0 14px 0;
+      font-size:20px;
+      color:var(--azul);
+      letter-spacing:0.2px;
+    }
+    p.lead{
+      margin:0 0 20px 0;
+      color:var(--preto);
+      font-size:13px;
+    }
+    /* desenho fictício do QR code */
+    .qr {
+      display:inline-block;
+      width:200px;
+      height:200px;
+      background:
+        linear-gradient(90deg, var(--preto) 0 20%, transparent 20% 100%),
+        linear-gradient(var(--preto) 0 20%, transparent 20% 100%);
+      background-size:30px 30px, 30px 30px;
+      position:relative;
+      box-shadow: inset 0 0 0 6px var(--branco);
+      margin-bottom:14px;
+    }
+    /* cantos maiores para parecer QR */
+    .qr::before,
+    .qr::after{
+      content:"";
+      position:absolute;
+      width:54px;
+      height:54px;
+      background:var(--preto);
+      box-shadow:0 0 0 8px var(--branco), 0 0 0 14px var(--preto);
+    }
+    .qr::before{ top:8px; left:8px; }
+    .qr::after{ bottom:8px; right:8px; transform:translate(0,0); }
+    /* pequeno quadrado inferior esquerdo para completar estilo */
+    .qr .small{
+      position:absolute;
+      width:34px;
+      height:34px;
+      background:var(--preto);
+      box-shadow:0 0 0 6px var(--branco), 0 0 0 10px var(--preto);
+      bottom:8px;
+      left:8px;
+    }
+    footer{
+      margin-top:10px;
+      font-size:11px;
+      color:#556;
+    }
+    @media (max-width:420px){
+      .qr{ width:150px; height:150px; background-size:22px 22px,22px 22px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card" role="main" aria-labelledby="title">
+      <h1 id="title">Livros e Manuais Ventura</h1>
+      <p class="lead">Catálogo digital — acesse materiais e guias</p>
+
+      <div class="qr" aria-hidden="true">
+        <div class="small"></div>
+      </div>
+
+      <footer>QR fictício — imagem ilustrativa</footer>
+    </div>
+  </div>
+</body>
+</html>
